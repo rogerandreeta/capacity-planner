@@ -4,8 +4,8 @@ import PeopleList from './PeopleList';
 import ProjectAccordion from './ProjectAccordion';
 
 const TABS = [
-  { id: 'people', label: 'People', icon: Users },
   { id: 'projects', label: 'Projects', icon: FolderKanban },
+  { id: 'people', label: 'People', icon: Users },
 ];
 
 export default function Setup({
@@ -24,12 +24,12 @@ export default function Setup({
   removeResourceFromTask,
   updateResourceHours,
 }) {
-  const [activeTab, setActiveTab] = useState('people');
+  const [activeTab, setActiveTab] = useState('projects');
 
   return (
     <div className="space-y-6">
       {/* Tabs */}
-      <div className="glass rounded-xl p-1 inline-flex gap-1">
+      <div className="glass rounded-xl p-1 inline-flex gap-1" id="test">
         {TABS.map(({ id, label, icon: Icon }) => (
           <button
             key={id}
